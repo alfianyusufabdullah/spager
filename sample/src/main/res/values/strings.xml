@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">sample</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment1">Page One</string>
+    <string name="hello_blank_fragment2">Page Two</string>
+    <string name="hello_blank_fragment3">Page Three</string>
+</resources>
