@@ -1,4 +1,4 @@
-package com.alfianyusufabdullah.spager.widget;
+package com.alfianyusufabdullah;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -18,17 +18,17 @@ import java.util.List;
  * AA
  */
 
-public class sViewPager extends ViewPager {
+public class SPager extends ViewPager {
 
     List<PageModel> pages = new ArrayList<>();
     FragmentManager manager;
     TabLayout tab;
 
-    public sViewPager(@NonNull Context context) {
+    public SPager(@NonNull Context context) {
         super(context);
     }
 
-    public sViewPager(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SPager(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -36,7 +36,7 @@ public class sViewPager extends ViewPager {
         this.manager = manager;
     }
 
-    public void addTabLayout(TabLayout tab){
+    public void addTabLayout(TabLayout tab) {
         this.tab = tab;
     }
 
@@ -45,13 +45,15 @@ public class sViewPager extends ViewPager {
     }
 
     public void build() {
-        PageAdapter adapter = new PageAdapter(manager);
-        adapter.setPages(pages);
-
-        if (tab != null){
-            tab.setupWithViewPager(this);
+        if (manager == null) {
+            throw new RuntimeException("Add initFragmentManager() before you call build()");
         }
 
+        if (tab != null) {
+            tab.setupWithViewPager(this);
+        }
+        PageAdapter adapter = new PageAdapter(manager);
+        adapter.setPages(pages);
         setAdapter(adapter);
     }
 }
