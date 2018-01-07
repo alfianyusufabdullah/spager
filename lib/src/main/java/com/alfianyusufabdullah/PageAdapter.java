@@ -1,4 +1,4 @@
-package com.alfianyusufabdullah.spager.widget;
+package com.alfianyusufabdullah;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,11 +17,11 @@ class PageAdapter extends FragmentPagerAdapter {
 
     private List<PageModel> pages;
 
-    public PageAdapter(FragmentManager fm) {
+    PageAdapter(FragmentManager fm) {
         super(fm);
     }
 
-    public void setPages(List<PageModel> pages) {
+    void setPages(List<PageModel> pages) {
         this.pages = pages;
     }
 

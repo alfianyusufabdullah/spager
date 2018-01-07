@@ -1,4 +1,4 @@
-package com.alfianyusufabdullah.spager.widget;
+package com.alfianyusufabdullah;
 
 import android.support.v4.app.Fragment;
 
@@ -13,16 +13,16 @@ class PageModel {
     private Fragment Page;
     private String Title;
 
-    public PageModel(Fragment page, String title) {
+    PageModel(Fragment page, String title) {
         Page = page;
         Title = title;
     }
 
-    public Fragment getPage() {
+    Fragment getPage() {
         return Page;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return Title;
     }
 }
