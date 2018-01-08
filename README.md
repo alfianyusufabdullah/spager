@@ -11,29 +11,35 @@ repositories {
 ```
 2. on module app **build.gradle** 
 ```gradle
-implementation 'com.github.alfianyusufabdullah:spager:1.0.0'
+implementation 'com.github.alfianyusufabdullah:spager:1.0.1'
 ```
+## TODO
+* Use AppCompat & Design Library
+* Jangan lupa baca Bismillah
 
 ## How To Use
 
 first add this code on your layout
 
 ```xml
-<com.alfianyusufabdullah.spager.widget.sViewPager
+<com.alfianyusufabdullah.SPager
    android:id="@+id/mainPage"
    android:layout_width="match_parent"
    android:layout_height="match_parent" />
 ```
 and add this on your Activity/Fragment
 ```java
-oncreate(){
-
- sViewPager viewPager = findViewById(...);
- viewPager.initFragmentManager(getSupportFragmentManager());
- viewPager.addPages("One" , new PageOne());
- viewPager.addPages("Two" , new PageTwo());
- viewPager.addPages("Three" , new PageThree());
- viewPager.build();
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+ 
+  SPager sPager = findViewById(...);
+  sPager.initFragmentManager(getSupportFragmentManager());
+  sPager.addPages("One" , new FragmentOne());
+  sPager.addPages("Two" , new FragmentTwo());
+  sPager.addPages("Three" , new FragmentThree());
+  sPager.build();
  
 }
 ```
@@ -41,30 +47,31 @@ oncreate(){
 if you wanna add tablayout just add this
 
 ```java
-viewPager.addTabLayout(tabLayout);
+sPager.addTabLayout(tabLayout);
 ```
 
 and finally code like this 
 
 ```java
-oncreate(){
-
- sViewPager viewPager = findViewById(...);
- viewPager.initFragmentManager(getSupportFragmentManager());
- viewPager.addPages("One" , new PageOne());
- viewPager.addPages("Two" , new PageTwo());
- viewPager.addPages("Three" , new PageThree());
- viewPager.addTabLayout(tabLayout);
- viewPager.build();
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  
+  TabLayout tabLayout = findViewById(R.id.mainTab);
+ 
+  SPager sPager = findViewById(...);
+  sPager.initFragmentManager(getSupportFragmentManager());
+  sPager.addPages("One" , new FragmentOne());
+  sPager.addPages("Two" , new FragmentTwo());
+  sPager.addPages("Three" , new FragmentThree());
+  sPager.addTabLayout(tabLayout);
+  sPager.build();
  
 }
 ```
 
-## TODO
-* Use AppCompat & Design Library
-* Jangan lupa baca Bismillah
-
-## Screenshoot
+## Preview
 <img src="https://github.com/alfianyusufabdullah/spager/raw/master/sample/screenshoot/ss1.png" width="250"> <img src="https://github.com/alfianyusufabdullah/spager/raw/master/sample/screenshoot/ss2.png" width="250"> <img src="https://github.com/alfianyusufabdullah/spager/raw/master/sample/screenshoot/ss3.png" width="250">
 
 ## License
