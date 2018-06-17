@@ -5,14 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.alfianyusufabdullah.SPager;
 import com.alfianyusufabdullah.sample.fragment.PageOne;
 import com.alfianyusufabdullah.sample.fragment.PageThree;
 import com.alfianyusufabdullah.sample.fragment.PageTwo;
-import com.alfianyusufabdullah.spager.widget.sViewPager;
 
-public class MainActivity extends AppCompatActivity {
+public class JavaExampleActivity extends AppCompatActivity {
 
-    sViewPager viewPager;
+    SPager viewPager;
     TabLayout tabLayout;
     Toolbar toolbar;
 
@@ -28,11 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.mainPage);
         viewPager.initFragmentManager(getSupportFragmentManager());
-        viewPager.addPages("One" , new PageOne());
-        viewPager.addPages("Two" , new PageTwo());
-        viewPager.addPages("Three" , new PageThree());
+        viewPager.addPages("One", new PageOne());
+        viewPager.addPages("Two", new PageTwo());
+        viewPager.addPages("Three", new PageThree());
         viewPager.addTabLayout(tabLayout);
         viewPager.build();
-
     }
 }
