@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.alfianyusufabdullah.sample.MainActivity">
+    tools:context="com.alfianyusufabdullah.sample.KotlinExampleActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,11 +21,11 @@
             android:id="@+id/mainTabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabTextColor="#fff"/>
+            app:tabTextColor="#fff" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <com.alfianyusufabdullah.spager.widget.sViewPager
+    <com.alfianyusufabdullah.SPager
         android:id="@+id/mainPage"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
