@@ -1,5 +1,7 @@
 # Fast ViewPager Library
 
+[![](https://jitpack.io/v/alfianyusufabdullah/spager.svg)](https://jitpack.io/#alfianyusufabdullah/spager)
+
 ## Add Dependencies
 
 1. Add it in your root **build.gradle** at the end of repositories:
@@ -11,7 +13,7 @@ repositories {
 ```
 2. on module app **build.gradle** 
 ```gradle
-implementation 'com.github.alfianyusufabdullah:spager:1.0.1'
+implementation 'com.github.alfianyusufabdullah:spager:1.1.0'
 ```
 ## TODO
 * Use AppCompat & Design Library
@@ -27,6 +29,8 @@ first add this code on your layout
    android:layout_width="match_parent"
    android:layout_height="match_parent" />
 ```
+
+### * Java
 and add this on your Activity/Fragment
 ```java
 @Override
@@ -36,9 +40,9 @@ protected void onCreate(Bundle savedInstanceState) {
  
   SPager sPager = findViewById(...);
   sPager.initFragmentManager(getSupportFragmentManager());
-  sPager.addPages("One" , new FragmentOne());
-  sPager.addPages("Two" , new FragmentTwo());
-  sPager.addPages("Three" , new FragmentThree());
+  sPager.addPages("One" , new PageOne());
+  sPager.addPages("Two" , new PageTwo());
+  sPager.addPages("Three" , new PageThree());
   sPager.build();
  
 }
@@ -68,6 +72,49 @@ protected void onCreate(Bundle savedInstanceState) {
   sPager.addTabLayout(tabLayout);
   sPager.build();
  
+}
+```
+
+### * Kotlin
+
+add this on your Activity
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main)
+ 
+  initViewPager(R.id.mainPage) {
+   addPages("One", PageOne())
+   addPages("Two", PageTwo())
+   addPages("Three", PageThree())
+  }
+}
+```
+or on your fragment
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+ super.onViewCreated(view, savedInstanceState)
+
+ ((context as AppCompatActivity)).initViewPager(R.id.mainPage){
+   addPages("One", PageOne())
+   addPages("Two", PageTwo())
+   addPages("Three", PageThree())
+  }
+}
+```
+if you wanna add tablayout just do like this
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main)
+ 
+  tabLayout = findViewById(R.id.mainTabLayout)
+ 
+  initViewPager(R.id.mainPage , tablayout) {
+   addPages("One", PageOne())
+   addPages("Two", PageTwo())
+   addPages("Three", PageThree())
+  }
 }
 ```
 
