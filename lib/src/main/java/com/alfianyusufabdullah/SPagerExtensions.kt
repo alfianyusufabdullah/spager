@@ -1,6 +1,7 @@
 package com.alfianyusufabdullah
 
 import android.support.design.widget.TabLayout
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 
 /**
@@ -12,9 +13,21 @@ import android.support.v7.app.AppCompatActivity
  */
 
 inline fun AppCompatActivity.initViewPager(id: Int, tabLayout: TabLayout? = null, addPage: SPager.() -> Unit) {
+
     val pages = findViewById<SPager>(id)
     tabLayout?.setupWithViewPager(pages)
     pages.initFragmentManager(supportFragmentManager)
     pages.addPage()
     pages.build()
+
+}
+
+inline fun Fragment.initViewPager(id: Int, tabLayout: TabLayout? = null, addPage: SPager.() -> Unit) {
+
+    val pages = view?.findViewById<SPager>(id)
+    tabLayout?.setupWithViewPager(pages)
+    pages?.initFragmentManager(childFragmentManager)
+    pages?.addPage()
+    pages?.build()
+
 }
