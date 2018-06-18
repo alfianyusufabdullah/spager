@@ -13,16 +13,16 @@ repositories {
 ```
 2. on module app **build.gradle** 
 ```gradle
-implementation 'com.github.alfianyusufabdullah:spager:1.1.0'
+implementation 'com.github.alfianyusufabdullah:spager:1.1.1'
 ```
 ## TODO
 * Use AppCompat & Design Library
 * Jangan lupa baca Bismillah
+* Harus jomblo
 
-## How To Use
+## Layout
 
 first add this code on your layout
-
 ```xml
 <com.alfianyusufabdullah.SPager
    android:id="@+id/mainPage"
@@ -30,22 +30,16 @@ first add this code on your layout
    android:layout_height="match_parent" />
 ```
 
-### * Java
-and add this on your Activity/Fragment
+## Java Code
+add this on your Activity/Fragment
 ```java
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
- 
   SPager sPager = findViewById(...);
+  
   sPager.initFragmentManager(getSupportFragmentManager());
   sPager.addPages("One" , new PageOne());
   sPager.addPages("Two" , new PageTwo());
   sPager.addPages("Three" , new PageThree());
   sPager.build();
- 
-}
 ```
 
 if you wanna add tablayout just add this
@@ -71,43 +65,21 @@ protected void onCreate(Bundle savedInstanceState) {
   sPager.addPages("Three" , new FragmentThree());
   sPager.addTabLayout(tabLayout);
   sPager.build();
- 
 }
 ```
 
-### * Kotlin
+## Kotlin Code
 
-add this on your Activity
+in kotlin you just add this on your Activity or Fragment
 ```kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
- super.onCreate(savedInstanceState)
- setContentView(R.layout.activity_main)
- 
   initViewPager(R.id.mainPage) {
    addPages("One", PageOne())
    addPages("Two", PageTwo())
    addPages("Three", PageThree())
   }
-}
 ```
-or on your fragment
+and if you wanna add tablayout just like this
 ```kotlin
-override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
- super.onViewCreated(view, savedInstanceState)
-
- ((context as AppCompatActivity)).initViewPager(R.id.mainPage){
-   addPages("One", PageOne())
-   addPages("Two", PageTwo())
-   addPages("Three", PageThree())
-  }
-}
-```
-if you wanna add tablayout just do like this
-```kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
- super.onCreate(savedInstanceState)
- setContentView(R.layout.activity_main)
- 
   tabLayout = findViewById(R.id.mainTabLayout)
  
   initViewPager(R.id.mainPage , tablayout) {
@@ -115,7 +87,6 @@ override fun onCreate(savedInstanceState: Bundle?) {
    addPages("Two", PageTwo())
    addPages("Three", PageThree())
   }
-}
 ```
 
 ## Preview
