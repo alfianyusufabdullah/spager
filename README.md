@@ -89,9 +89,6 @@ and if you wanna add tablayout just like this
   }
 ```
 
-## Preview
-<img src="https://github.com/alfianyusufabdullah/spager/raw/master/sample/screenshoot/ss1.png" width="250"> <img src="https://github.com/alfianyusufabdullah/spager/raw/master/sample/screenshoot/ss2.png" width="250"> <img src="https://github.com/alfianyusufabdullah/spager/raw/master/sample/screenshoot/ss3.png" width="250">
-
 ## License
 
     Copyright 2017 Alfian Yusuf Abdullah
