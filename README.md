@@ -1,6 +1,6 @@
 # Fast ViewPager Library
 
-[![](https://jitpack.io/v/alfianyusufabdullah/spager.svg)](https://jitpack.io/#alfianyusufabdullah/spager)
+[![](https://jitpack.io/v/alfianyusufabdullah/spager.svg)](https://jitpack.io/#alfianyusufabdullah/spager) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-SPager-green.svg?style=flat )]( https://android-arsenal.com/details/1/7006 )
 
 ## Add Dependencies
 
