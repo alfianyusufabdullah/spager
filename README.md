@@ -18,7 +18,6 @@ implementation 'com.github.alfianyusufabdullah:spager:1.1.1'
 ## TODO
 * Use AppCompat & Design Library
 * Jangan lupa baca Bismillah
-* Harus jomblo
 
 ## Layout
 
