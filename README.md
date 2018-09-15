@@ -71,37 +71,25 @@ protected void onCreate(Bundle savedInstanceState) {
 
 in kotlin you just add this on your Activity or Fragment
 ```kotlin
-    import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.*
     
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        mainToolbar.title = "SPager"
-
-        mainPage.init {
-            addPages("One" , PageOne())
-            addPages("Two" , PageTwo())
-            addPages("Three" , PageThree())
-        }
-    }
+mainToolbar.title = "SPager"
+mainPage.init {
+    addPages("One" , PageOne())
+    addPages("Two" , PageTwo())
+    addPages("Three" , PageThree())
+}
 ```
-and if you wanna add tablayout just like this
+and if you wanna add TabLayout just like this
 ```kotlin
-    import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.*
     
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        mainToolbar.title = "SPager"
-
-        mainPage.init(mainTabLayout) {
-            addPages("One" , PageOne())
-            addPages("Two" , PageTwo())
-            addPages("Three" , PageThree())
-        }
-    }
+mainToolbar.title = "SPager"
+mainPage.init(mainTabLayout) {
+    addPages("One" , PageOne())
+    addPages("Two" , PageTwo())
+    addPages("Three" , PageThree())
+}
 ```
 
 ## License
