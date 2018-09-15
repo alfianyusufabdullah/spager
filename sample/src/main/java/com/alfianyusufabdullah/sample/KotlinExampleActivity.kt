@@ -1,33 +1,25 @@
 package com.alfianyusufabdullah.sample
 
-import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
-import com.alfianyusufabdullah.initViewPager
-
+import com.alfianyusufabdullah.init
 import com.alfianyusufabdullah.sample.fragment.PageOne
 import com.alfianyusufabdullah.sample.fragment.PageThree
 import com.alfianyusufabdullah.sample.fragment.PageTwo
+import kotlinx.android.synthetic.main.activity_main.*
 
 class KotlinExampleActivity : AppCompatActivity() {
-
-    private lateinit var tabLayout: TabLayout
-    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolbar = findViewById(R.id.mainToolbar)
-        toolbar.title = "Sample"
+        mainToolbar.title = "SPager"
 
-        tabLayout = findViewById(R.id.mainTabLayout)
-
-        initViewPager(R.id.mainPage , tabLayout) {
-            addPages("One", PageOne())
-            addPages("Two", PageTwo())
-            addPages("Three", PageThree())
+        mainPage.init(mainTabLayout) {
+            addPages("One" , PageOne())
+            addPages("Two" , PageTwo())
+            addPages("Three" , PageThree())
         }
     }
 }
