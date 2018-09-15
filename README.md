@@ -13,7 +13,7 @@ repositories {
 ```
 2. on module app **build.gradle** 
 ```gradle
-implementation 'com.github.alfianyusufabdullah:spager:1.1.1'
+implementation 'com.github.alfianyusufabdullah:spager:1.2.0'
 ```
 ## TODO
 * Use AppCompat & Design Library
@@ -71,21 +71,37 @@ protected void onCreate(Bundle savedInstanceState) {
 
 in kotlin you just add this on your Activity or Fragment
 ```kotlin
-  initViewPager(R.id.mainPage) {
-   addPages("One", PageOne())
-   addPages("Two", PageTwo())
-   addPages("Three", PageThree())
-  }
+    import kotlinx.android.synthetic.main.activity_main.*
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        mainToolbar.title = "SPager"
+
+        mainPage.init {
+            addPages("One" , PageOne())
+            addPages("Two" , PageTwo())
+            addPages("Three" , PageThree())
+        }
+    }
 ```
 and if you wanna add tablayout just like this
 ```kotlin
-  tabLayout = findViewById(R.id.mainTabLayout)
- 
-  initViewPager(R.id.mainPage , tablayout) {
-   addPages("One", PageOne())
-   addPages("Two", PageTwo())
-   addPages("Three", PageThree())
-  }
+    import kotlinx.android.synthetic.main.activity_main.*
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        mainToolbar.title = "SPager"
+
+        mainPage.init(mainTabLayout) {
+            addPages("One" , PageOne())
+            addPages("Two" , PageTwo())
+            addPages("Three" , PageThree())
+        }
+    }
 ```
 
 ## License
